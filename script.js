@@ -1,5 +1,3 @@
-// document.querySelector('*').style.cssText = 'box-sizing: border-box; padding: 0; margin: 0'
-
 let size = 16
 
 const container = document.querySelector('.container')
@@ -10,13 +8,14 @@ container.style.cssText = 'display:flex; flex-wrap: wrap; width: 1000px; height:
 for (i = 0; i < (size * size); i++) {
     const div = document.createElement('div')
     div.style.cssText = `height: calc(1000px / ${size} - 2px); width: calc(1000px / ${size} - 2px); border: 1px solid black;`
-    div.addEventListener('mouseenter', () => div.style.cssText += 'background-color: yellow')
+    div.addEventListener('mouseenter', () => div.style.cssText += `background-color: rgb(${Math.floor(Math.random() * 254 + 1)}, ${Math.floor(Math.random() * 254 + 1)}, ${Math.floor(Math.random() * 254 + 1)})`)
     container.appendChild(div)
 }
 
 const button = document.createElement('button')
-button.textContent = "Enter size"
-document.querySelector('body').appendChild(button)
+button.textContent = "Custom size"
+button.style.cssText = 'padding: 10px; margin-bottom: 10px;'
+document.querySelector('body').prepend(button)
 
 button.addEventListener('click', () => {
     let number = prompt("Enter number of square per side for your sketch board")
@@ -32,7 +31,7 @@ button.addEventListener('click', () => {
     for (i = 0; i < (size * size); i++) {
         const div = document.createElement('div')
         div.style.cssText = `height: calc(1000px / ${size} - 2px); width: calc(1000px / ${size} - 2px); border: 1px solid black;`
-        div.addEventListener('mouseenter', () => div.style.cssText += 'background-color: yellow')
+        div.addEventListener('mouseenter', () => div.style.cssText += `background-color: rgb(${Math.floor(Math.random() * 254 + 1)}, ${Math.floor(Math.random() * 254 + 1)}, ${Math.floor(Math.random() * 254 + 1)})`)
         container.appendChild(div)
     }
 })
